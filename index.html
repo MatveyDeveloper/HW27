@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Side menu</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 40px;
+    background: #777;
+    overflow: hidden;
+    transition: width 0.3s;
+    z-index: 10;
+  }
+
+  .sidebar:hover {
+    width: 260px;
+  }
+
+  .sidebar-label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 40px;
+    text-align: center;
+    transform: translateY(-50%) rotate(-90deg);
+    color: #fff;
+    letter-spacing: 2px;
+  }
+
+  .menu {
+    margin-left: 60px;
+    margin-top: 80px;
+    color: #fff;
+  }
+
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    margin: 12px 0;
+    font-size: 18px;
+    position: relative;
+  }
+
+  .menu li::before {
+    content: "◆";
+    color: orange;
+    position: absolute;
+    left: -25px;
+    top: 0;
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .content {
+    margin-left: 40px;
+    padding: 20px;
+  }
+
+  .sidebar:hover + .content {
+    margin-left: 260px;
+    transition: margin-left 0.3s;
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-label">MENU HERE</div>
+  <nav class="menu">
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">CONTACTS</a></li>
+      <li><a href="#">OUR TEAM</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">NEWS</a></li>
+    </ul>
+  </nav>
+</div>
+
+</body>
+</html>
