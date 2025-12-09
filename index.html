@@ -1,97 +1,99 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Side menu</title>
+<title>Side Hover Menu</title>
 <style>
-  body {
-    margin: 0;
-    font-family: "Times New Roman", serif;
-  }
-
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 40px;
-    background: #777;
-    overflow: hidden;
-    transition: width 0.3s;
-    z-index: 10;
-  }
-
-  .sidebar:hover {
-    width: 260px;
-  }
-
-  .sidebar-label {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 40px;
-    text-align: center;
-    transform: translateY(-50%) rotate(-90deg);
-    color: #fff;
-    letter-spacing: 2px;
-  }
-
-  .menu {
-    margin-left: 60px;
-    margin-top: 80px;
-    color: #fff;
-  }
-
-  .menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu li {
-    margin: 12px 0;
-    font-size: 18px;
-    position: relative;
-  }
-
-  .menu li::before {
-    content: "◆";
-    color: orange;
-    position: absolute;
-    left: -25px;
-    top: 0;
-  }
-
-  .menu a {
-    text-decoration: none;
-    color: #fff;
-  }
-
-  .content {
-    margin-left: 40px;
-    padding: 20px;
-  }
-
-  .sidebar:hover + .content {
-    margin-left: 260px;
-    transition: margin-left 0.3s;
-  }
+html,body{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+body{
+    font-family:"Times New Roman",serif;
+    background:#ffffff;
+}
+.side-menu{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:300px;
+    overflow:hidden;
+}
+.side-menu-inner{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:300px;
+    background:#808080;
+    border-right:3px solid #5aa6ff;
+    box-sizing:border-box;
+    padding-left:80px;
+    padding-top:80px;
+    transform:translateX(-265px);
+    transition:transform .35s ease;
+}
+.side-menu:hover .side-menu-inner{
+    transform:translateX(0);
+}
+.menu-title{
+    position:absolute;
+    top:50%;
+    right:10px;
+    transform:translateY(-50%) rotate(180deg);
+    writing-mode:vertical-rl;
+    color:#ffffff;
+    font-size:12px;
+    letter-spacing:1px;
+}
+.side-menu:hover .menu-title{
+    opacity:0;
+}
+.menu{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.menu li{
+    margin:14px 0;
+    font-size:18px;
+    color:#ffffff;
+}
+.menu li span{
+    position:relative;
+    padding-left:30px;
+    text-transform:uppercase;
+}
+.menu li span::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:10px;
+    height:10px;
+    margin-top:-5px;
+    background:#ffb000;
+    border:2px solid #000000;
+    transform:rotate(45deg);
+}
 </style>
 </head>
 <body>
 
-<div class="sidebar">
-  <div class="sidebar-label">MENU HERE</div>
-  <nav class="menu">
-    <ul>
-      <li><a href="#">HOME</a></li>
-      <li><a href="#">CONTACTS</a></li>
-      <li><a href="#">OUR TEAM</a></li>
-      <li><a href="#">FAQ</a></li>
-      <li><a href="#">ABOUT</a></li>
-      <li><a href="#">NEWS</a></li>
-    </ul>
-  </nav>
+<div class="side-menu">
+    <div class="side-menu-inner">
+        <div class="menu-title">MENU HERE</div>
+        <ul class="menu">
+            <li><span>HOME</span></li>
+            <li><span>CONTACTS</span></li>
+            <li><span>OUR TEAM</span></li>
+            <li><span>FAQ</span></li>
+            <li><span>ABOUT</span></li>
+            <li><span>NEWS</span></li>
+        </ul>
+    </div>
 </div>
 
 </body>
